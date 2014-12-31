@@ -1,11 +1,34 @@
 
 
-These files and function references all live in the **wal** package.
-
-### wal.go ###
-
+These files and function references all live in the **wal** package,
+unless specifically stated that they live somewhere else.
 
 ##### Writing data to disk #####
+
+
+In etcdserver/server.go :
+
+```
+func (s *EtcdServer) run() {
+```
+
+There is an infinite for loop whose job it is to do multiple things including
+writing data out to the wal file every n ticks.  It is inside this case
+statement
+
+```
+case rd := <-s.node.Ready():
+```
+
+where this method gets called
+
+```
+if err := s.storage.Save(rd.HardState, rd.Entries); err != nil {
+  log.Fatalf("etcdserver: save state and entries error: %v", err)
+}
+```
+
+### wal.go ###
 
 The sync function below is called from here
 
@@ -36,6 +59,6 @@ func (w *WAL) sync() error {
 }
 ```
 
-All of this is possible because of this: 
+All of this is possible because of this:
 [http://golang.org/pkg/os/#File.Sync]
 (http://golang.org/pkg/os/#File.Sync)
