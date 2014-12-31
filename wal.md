@@ -35,3 +35,7 @@ func (w *WAL) sync() error {
   return w.f.Sync()
 }
 ```
+
+All of this is possible because of this: 
+[http://golang.org/pkg/os/#File.Sync]
+(http://golang.org/pkg/os/#File.Sync)
