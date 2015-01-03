@@ -3,7 +3,7 @@ To slow everything down dramatically 3 parameters need to change
 
 Add 1 zero or 2 zeros to all of the parameters
 
-* // TODO: calculate based on heartbeat interval
+* TODO: calculate based on heartbeat interval
 * defaultPublishRetryInterval = 500 * time.Second
 *
 * Ticker and SyncTicker in EtcdServer below
