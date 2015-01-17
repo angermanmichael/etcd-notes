@@ -1,7 +1,7 @@
 
-package : etcdmain
-file : etcd.go
-method : startEtcd
+* package : etcdmain
+* file : etcd.go
+* method : startEtcd
 
 This is the first log message upon startup:
 It is here that **setupCluster** gets called and the default case gets triggered
