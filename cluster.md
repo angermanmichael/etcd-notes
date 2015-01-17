@@ -4,7 +4,14 @@
 * method : startEtcd
 
 This is the first log message upon startup:
-It is here that **setupCluster** gets called and the default case gets triggered
+
+It is here that
+
+```
+func setupCluster(cfg *config) (*etcdserver.Cluster, error) {
+```
+
+gets called and the default case gets triggered
 firing off this method:
 
 ```
