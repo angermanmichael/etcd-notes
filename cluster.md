@@ -36,3 +36,20 @@ cluster = default=http://localhost:2380,  default=http://localhost:7001
 
 You can test to make sure these URL's are up and running by pointing your browser
 at them.  You will get a *404 page not found* proving the endpoint is up and running.
+
+* package : etcdmain
+* file : config.go
+* method : NewConfig
+
+At the end of this method everything is setup this way:
+
+```
+fs.StringVar(&cfg.initialCluster, "initial-cluster", "default=http://localhost:2380,default=http://localhost:7001", "Initial cluster configuration for bootstrapping")
+fs.StringVar(&cfg.initialClusterToken, "initial-cluster-token", "etcd-cluster", "Initial cluster token for the etcd cluster during bootstrap")
+fs.Var(cfg.clusterState, "initial-cluster-state", "Initial cluster configuration for bootstrapping")
+if err := cfg.clusterState.Set(clusterStateFlagNew); err != nil {
+  // Should never happen.
+  log.Panicf("unexpected error setting up clusterStateFlag: %v", err)
+}
+
+```
