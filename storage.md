@@ -18,5 +18,20 @@ this command.
 func NewStorage(w *wal.WAL, s *snap.Snapshotter) Storage
 ```
 
-data moves into **rd.HardState** and **rd.Entries** from the MemoryStorage
-in the raft package and NOT in the etcdserver package (I think)
+data moves into Ready:
+
+**rd.HardState** and **rd.Entries** from MemoryStorage
+
+into package : raft, file : node.go
+
+```
+func newReady(r *raft, prevSoftSt *SoftState, prevHardSt pb.HardState) Ready {
+  rd := Ready{
+    Entries:          r.raftLog.unstableEntries(),
+    CommittedEntries: r.raftLog.nextEnts(),
+    Messages:         r.msgs,
+  }
+```
+
+to find other places where data moves from MemoryStorage into Ready
+do a search in *node.go* for **Entries:**
