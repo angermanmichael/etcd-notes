@@ -22,7 +22,7 @@ data moves into Ready:
 
 **rd.HardState** and **rd.Entries** from MemoryStorage
 
-into package : raft, file : node.go
+in package : raft, file : node.go
 
 ```
 func newReady(r *raft, prevSoftSt *SoftState, prevHardSt pb.HardState) Ready {
