@@ -11,11 +11,12 @@ if err := s.r.storage.Save(rd.HardState, rd.Entries); err != nil {
 }
 ```
 
-**s.r.storage** gets created in the file *etcdserver/storage.go*
+**s.r.storage** gets created in the file *etcdserver/storage.go* via
+this command.
 
 ```
 func NewStorage(w *wal.WAL, s *snap.Snapshotter) Storage
 ```
 
-data moves into rd.HardState and rd.Entries from the MemoryStorage
+data moves into **rd.HardState** and **rd.Entries** from the MemoryStorage
 in the raft package and NOT in the etcdserver package (I think)
