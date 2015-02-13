@@ -1,7 +1,7 @@
 
-This is one of the most confusing aspects of the system for me.
+How the data moves from
 
-Basically how the data moves from MemoryStorage to the WAL file.
+####MemoryStorage into the WAL file.
 
 It happens here in *server.go*
 
