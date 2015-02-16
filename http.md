@@ -6,7 +6,7 @@ There are three
 * *etcdhttp.client*
 * *etcdhttp.peer*
 
-#### rafthttp
+#### package: rafthttp
 
 Located in *transport.go*
 
