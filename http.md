@@ -5,3 +5,13 @@ There are three
 * *rafthttp.transport*
 * *etcdhttp.client*
 * *etcdhttp.peer*
+
+#### rafthttp
+
+Located in *transport.go*
+
+* NewTransporter
+* NewHandler
+* NewStreamHandler
+
+Everything gets bootstrapped in etcdserver by the call to **NewTransporter**
