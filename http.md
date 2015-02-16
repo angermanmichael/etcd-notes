@@ -26,10 +26,5 @@ type Transporter interface {
 
 ```
 
-Located in *transport.go*
-
-* NewTransporter
-* NewHandler
-* NewStreamHandler
-
-Everything gets bootstrapped in etcdserver by the call to **NewTransporter**
+Everything gets bootstrapped in *server.go* by the call to **NewTransporter**,
+and then the Transporter interface method calls get invoked in *server.go* via **s.r.transport**.
