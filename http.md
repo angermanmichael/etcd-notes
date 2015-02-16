@@ -28,3 +28,11 @@ type Transporter interface {
 
 Everything gets bootstrapped in *server.go* by the call to **NewTransporter**,
 and then the Transporter interface method calls get invoked in *server.go* via **s.r.transport**.
+
+CONTINUE FROM HERE:
+
+```
+etcdmain/etcd.go:	ph := etcdhttp.NewPeerHandler(s.Cluster, s.RaftHandler())
+
+etcdserver/server.go:func (s *EtcdServer) RaftHandler() http.Handler { return s.r.transport.Handler() }
+```
