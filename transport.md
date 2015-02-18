@@ -1,25 +1,13 @@
 
+* package: etcdmain, file: etcd.go, method: startetcd
 
-#### NewTimeoutTransport
+All of the transport related functionality gets fired off early in the startup phase.
+In the method **startetcd** the following two methods get called in order:
 
-This is where all of the transport related functionality starts out.
+* package: transport, file: timeout_transport, method: NewTimeoutTransport
+* package: transport, file: timeout_listener,  method: NewTimeoutListener
 
-It gets fired off early in the startup phase.
+It is responsible for calling **NewTransport** and **NewListener** located here:
 
-It is responsible for calling **NewTransport**
-
-* package: etcdmain
-* file: etcd.go
-* method: startetcd
-
-#####pkg/transport/listener.go
-
-On startup of etcd the following 3 transport methods get called in this order:
-
-```
-func NewTransport(info TLSInfo) (*http.Transport, error) {
-
-func (info TLSInfo) ClientConfig() (cfg *tls.Config, err error) {
-
-func NewListener(addr string, scheme string, info TLSInfo) (net.Listener, error) {
-```
+* package: transport, file: listener, method NewTransport
+* package: transport, file: listener, method NewListener
