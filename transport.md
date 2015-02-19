@@ -12,3 +12,12 @@ It is responsible for calling **NewTransport** and **NewListener** located here:
 
 * package: transport, file: listener, method NewTransport
 * package: transport, file: listener, method NewListener
+
+Transport Layer Security (TLS) is by default set to Empty as noted here
+in *listener.go* in the transport package.
+
+```
+func (info TLSInfo) Empty() bool {
+	return info.CertFile == "" && info.KeyFile == ""
+}
+```
