@@ -1,5 +1,5 @@
 
-* package: etcdmain, file: etcd.go, method: startetcd
+* package: etcdmain, file: etcd, method: startetcd
 
 All of the transport related functionality gets fired off early in the startup phase.
 In the method **startetcd** the following 3 methods get called in order:
