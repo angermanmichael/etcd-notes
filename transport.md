@@ -21,3 +21,11 @@ func (info TLSInfo) Empty() bool {
 	return info.CertFile == "" && info.KeyFile == ""
 }
 ```
+
+All of the transport and listener setup is to drive the starting of the clients
+that talk to the etcdserver.  So first the server starts and then all of the
+subsequent clients start there after.
+
+* package: etcdmain, file: etcd, method: startEtcd
+
+startEtcd launches the etcd server and HTTP handlers for client/server communication.
