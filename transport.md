@@ -22,8 +22,8 @@ func (info TLSInfo) Empty() bool {
 }
 ```
 
-All of the transport and listener setup is to drive the starting of the clients
-that talk to the etcdserver.  
+All of the **transport** and **listener** setup is to drive the starting of the clients
+that talk to the **etcdserver**.  
 
 So first the server starts and then all of the subsequent clients start there after.
 
