@@ -29,4 +29,4 @@ So first the server starts and then all of the subsequent clients start there af
 
 * package: etcdmain, file: etcd, method: startEtcd
 
-startEtcd launches the etcd server and HTTP handlers for client/server communication.
+**startEtcd** launches the etcd server and HTTP handlers for client/server communication.
