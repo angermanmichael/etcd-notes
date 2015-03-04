@@ -4,7 +4,8 @@
 the **message** and **msgapp** {encoder, decoder} pairs are both referenced
 in the file stream.go in the methods:
 
-**startStreamReader** and **startStreamWriter** which both get fired off in **startPeer**.
+**startStreamReader** and **startStreamWriter** which both get fired off in **startPeer**
+defined in *peer.go*
 
 which gets fired off in the **AddPeer** method located in *transport.go*
 
