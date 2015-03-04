@@ -9,3 +9,5 @@ in stream.
 **startPeer** gets fired off in the **AddPeer** method located in transport.go.
 
 The **AddPeer** method is called throughout *server.go*
+
+where the method *rafthttp.NewTransporter* kicks everything off.
