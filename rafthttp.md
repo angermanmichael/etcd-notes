@@ -13,5 +13,4 @@ The **AddPeer** method is called throughout *server.go*
 where the method *rafthttp.NewTransporter* kicks everything off.
 
 see the GoDoc on package rafthttp
-[here].
-(http://godoc.org/github.com/coreos/etcd/rafthttp)
+[here](http://godoc.org/github.com/coreos/etcd/rafthttp)
