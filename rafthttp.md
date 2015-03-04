@@ -2,12 +2,16 @@
 #### package rafthttp
 
 the **message** and **msgapp** {encoder, decoder} pairs are both referenced
-in stream.
+in the file stream.go in the methods:
 
-**startStreamReader** and **startStreamWriter** both get fired off in **startPeer**.
+**startStreamReader** and **startStreamWriter** which both get fired off in **startPeer**.
 
-**startPeer** gets fired off in the **AddPeer** method located in transport.go.
+which gets fired off in the **AddPeer** method located in *transport.go*
 
 The **AddPeer** method is called throughout *server.go*
 
 where the method *rafthttp.NewTransporter* kicks everything off.
+
+see the GoDoc on package rafthttp
+[here].
+(http://godoc.org/github.com/coreos/etcd/rafthttp)
