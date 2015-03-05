@@ -54,3 +54,34 @@ Besides general stream, peer also has a optimized stream for sending msgApp sinc
 of all messages. Only raft leader uses the optimized stream to send msgApp to the remote follower node.
 A pipeline is a series of http clients that send http requests to the remote.
 It is only used when the stream has not been established.
+
+In transport.go is defined
+
+```
+func (t *transport) Handler() http.Handler {
+	pipelineHandler := NewHandler(t.raft, t.clusterID)
+	streamHandler := newStreamHandler(t, t.id, t.clusterID)
+	mux := http.NewServeMux()
+	mux.Handle(RaftPrefix, pipelineHandler)
+	mux.Handle(RaftStreamPrefix+"/", streamHandler)
+	return mux
+}
+```
+
+In server.go this is how the above Handler gets called:
+
+```
+func (s *EtcdServer) RaftHandler() http.Handler { return s.r.transport.Handler() }
+```
+
+which is then turned around and called in etcdmain/etcd.go
+
+```
+ph := etcdhttp.NewPeerHandler(s.Cluster, etcdserver.RaftTimer(s), s.RaftHandler())
+// Start the peer server in a goroutine
+for _, l := range plns {
+	go func(l net.Listener) {
+		log.Fatal(serveHTTP(l, ph, 5*time.Minute))
+	}(l)
+}
+```
