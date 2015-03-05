@@ -13,6 +13,33 @@ The **AddPeer** method is called throughout *server.go*
 
 where the method *rafthttp.NewTransporter* kicks everything off.
 
+By looking at the code below one can see:
+
+server.go sends messages to the peers via the transport after appending messages
+to the log.
+
+The rafthttp.transport sends the message via the rafthttp.peer
+
+As defined in rafthttp/peer.go
+
+```
+func (p *peer) Send(m raftpb.Message) {
+	select {
+	case p.sendc <- m:
+```
+
+As defined in server.go
+
+```
+s.r.raftStorage.Append(rd.Entries)
+s.send(rd.Messages)
+
+...
+
+As shown in the actual send method in server.go
+s.r.transport.Send(ms)
+```
+
 for further details go
 [here](http://godoc.org/github.com/coreos/etcd/rafthttp)
 to see the GoDoc on package rafthttp
