@@ -11,7 +11,7 @@ which gets fired off in the **AddPeer** method located in *transport.go*
 
 The **AddPeer** method is called throughout *server.go*
 
-where the method *rafthttp.NewTransporter* kicks everything off.
+where the method *rafthttp.NewTransporter* kicks everything off as defined in *transport.go*
 
 By looking at the code below one can see:
 
