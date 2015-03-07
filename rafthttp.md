@@ -1,6 +1,11 @@
 
 #### package rafthttp
 
+In server.go everything gets kicked off this way:
+
+(rafthttp.NewTransporter)
+[http://godoc.org/github.com/coreos/etcd/rafthttp#NewTransporter]
+
 #### s.r.transport
 
 *	Handler
