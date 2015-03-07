@@ -86,11 +86,19 @@ for _, l := range plns {
 }
 ```
 
+#### Test Table
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
 #### Hierarchy
 
-* transport.go      AddPeer
-* peer.go           startPeer
-* stream.go         startStreamReader, startStreamWriter
+transport.go  | AddPeer
+------------- | -------------
+peer.go       | startPeer
+stream.go     | startStreamReader, startStreamWriter
 
 #### Testing Notes
 
