@@ -86,6 +86,12 @@ for _, l := range plns {
 }
 ```
 
+#### Hierarchy
+
+* transport.go      AddPeer
+* peer.go           startPeer
+* stream.go         startStreamReader, startStreamWriter
+
 #### Testing Notes
 
 The following other test files need to be in place to run **stream_test.go**
