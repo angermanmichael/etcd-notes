@@ -1,6 +1,27 @@
 
 #### package rafthttp
 
+#### s.r.transport
+
+*	Handler
+*	Send
+*	AddPeer
+*	RemovePeer
+*	RemoveAllPeers
+*	UpdatePeer
+*	Stop
+
+#### Hierarchy
+
+Filename      | Method
+------------- | -------
+transport.go  | AddPeer
+peer.go       | startPeer
+stream.go     | startStreamReader, startStreamWriter
+
+
+
+
 the **message** and **msgapp** {encoder, decoder} pairs are both referenced
 in the file stream.go in the methods:
 
@@ -92,14 +113,6 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
-
-#### Hierarchy
-
-Filename      | Method
-------------- | -------
-transport.go  | AddPeer
-peer.go       | startPeer
-stream.go     | startStreamReader, startStreamWriter
 
 #### Testing Notes
 
