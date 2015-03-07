@@ -85,3 +85,12 @@ for _, l := range plns {
 	}(l)
 }
 ```
+
+#### Testing Notes
+
+The following other test files need to be in place to run stream_test.go
+
+* functional_test.go
+* pipeline_test.go
+* stream_test.go
+* urlpick_test.go
