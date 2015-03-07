@@ -1,7 +1,7 @@
 
 #### package rafthttp
 
-In server.go everything gets kicked off this way:
+In *server.go* everything gets kicked off with
 [rafthttp.NewTransporter]
 (http://godoc.org/github.com/coreos/etcd/rafthttp#NewTransporter)
 
