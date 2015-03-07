@@ -95,8 +95,9 @@ Content Cell  | Content Cell
 
 #### Hierarchy
 
+Filename      | Method
+------------- | -------
 transport.go  | AddPeer
-------------- | -------------
 peer.go       | startPeer
 stream.go     | startStreamReader, startStreamWriter
 
