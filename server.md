@@ -5,11 +5,21 @@
 
 The first time through on startup this case gets called because no WAL file exists.
 
+* haveWAL =  false
+* cfg.NewCluster =  true
+
+```
 case !haveWAL && cfg.NewCluster:
+```
 
 Each subsequent call this case gets called:
 
+* haveWAL =  true
+* cfg.NewCluster =  true
+
+```
 case haveWAL:
+```
 
 This time through
 
