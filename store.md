@@ -19,6 +19,6 @@ Along with one file in
 [etcdhttp]
 (http://godoc.org/github.com/coreos/etcd/etcdserver/etcdhttp)
 
-* etcddhttp/client.go
+* client.go
 
 If for some reason you want to replace the store package then you would need to find some place to store the members belonging to the cluster configuration information.
