@@ -1,2 +1,1 @@
-etcd-notes
-==========
+This repo was forked from **stormasm** and really is no longer relevant as etcd has drastically changed since these notes were written...
